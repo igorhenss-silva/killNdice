@@ -9,6 +9,7 @@ import com.igorhenss.killNdice.killNdice.enumerated.Raca;
 import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 import com.igorhenss.killNdice.killNdice.repository.PersonagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -89,6 +90,20 @@ public class PersonagemService {
         personagem.setProfissao(dto.getProfissao());
         personagem.setRaca(dto.getRaca());
         return personagemParaDto(personagemRepository.save(personagem));
+    }
+
+    // DELETE
+
+    public HttpStatus delete(Long id) {
+        Long beforeDelete = personagemRepository.count();
+        Long afterDelete;
+        Personagem personagem = personagemRepository.getOne(id);
+        personagemRepository.delete(personagem);
+        afterDelete = personagemRepository.count();
+        if(!beforeDelete.equals(afterDelete)) {
+            return HttpStatus.OK;
+        }
+        return HttpStatus.NOT_FOUND;
     }
 
     // METHODS
