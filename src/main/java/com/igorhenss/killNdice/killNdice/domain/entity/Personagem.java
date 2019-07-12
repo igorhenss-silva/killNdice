@@ -47,4 +47,37 @@ public class Personagem {
         this.raca = criador.getRaca();
     }
 
+    // GETTERS
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Integer getHitpointsMaximos() {
+        return hitpointsMaximos;
+    }
+
+    public Integer getHitpoints() {
+        return hitpoints;
+    }
+
+    public Alinhamento getAlinhamento() {
+        return alinhamento;
+    }
+
+    public Classe getClasse() {
+        return classe;
+    }
+
+    public Profissao getProfissao() {
+        return profissao;
+    }
+
+    public Raca getRaca() {
+        return raca;
+    }
 }
