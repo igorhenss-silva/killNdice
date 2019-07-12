@@ -3,6 +3,7 @@ package com.igorhenss.killNdice.killNdice.resource;
 import com.igorhenss.killNdice.killNdice.domain.dto.PersonagemDTO;
 import com.igorhenss.killNdice.killNdice.enumerated.Alinhamento;
 import com.igorhenss.killNdice.killNdice.enumerated.Classe;
+import com.igorhenss.killNdice.killNdice.enumerated.Profissao;
 import com.igorhenss.killNdice.killNdice.service.PersonagemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,11 @@ public class PersonagemResource {
     @GetMapping(value = "/classe/{classe}")
     public List<PersonagemDTO> getByClasse(@PathVariable("classe") Classe classe) {
         return personagemService.getByClasse(classe);
+    }
+
+    @GetMapping(value = "/profissao/{profissao}")
+    public List<PersonagemDTO> getByProfissao(@PathVariable("profissao") Profissao profissao) {
+        return personagemService.getByProfissao(profissao);
     }
 
 }
