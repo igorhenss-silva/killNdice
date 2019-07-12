@@ -3,14 +3,36 @@ package com.igorhenss.killNdice.killNdice.domain.entity;
 import com.igorhenss.killNdice.killNdice.enumerated.*;
 import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "personagem")
 public class Personagem {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "nome", nullable = false, unique = true)
     private String nome;
+
+    @Column(name = "hp", nullable = false)
     private Integer hitpoints;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "alinhamento", nullable = false)
     private Alinhamento alinhamento;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "classe", nullable = false)
     private Classe classe;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "profissao")
     private Profissao profissao;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "raca", nullable = false)
     private Raca raca;
 
     public Personagem(CriadorDePersonagem criador) {
