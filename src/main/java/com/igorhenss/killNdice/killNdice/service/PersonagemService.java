@@ -3,6 +3,7 @@ package com.igorhenss.killNdice.killNdice.service;
 import com.igorhenss.killNdice.killNdice.domain.dto.PersonagemDTO;
 import com.igorhenss.killNdice.killNdice.domain.entity.Personagem;
 import com.igorhenss.killNdice.killNdice.enumerated.Alinhamento;
+import com.igorhenss.killNdice.killNdice.enumerated.Classe;
 import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 import com.igorhenss.killNdice.killNdice.repository.PersonagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +36,10 @@ public class PersonagemService {
 
     public List<PersonagemDTO> getByNomeParcial(String nome) {
         return personagemRepository.findAll()
-                .stream()
-                .filter(personagem -> personagem.getNome().contains(nome))
-                .map(this::personagemParaDto)
-                .collect(Collectors.toList());
+                                    .stream()
+                                    .filter(personagem -> personagem.getNome().contains(nome))
+                                    .map(this::personagemParaDto)
+                                    .collect(Collectors.toList());
     }
 
     public PersonagemDTO getByNome(String nome) {
@@ -48,10 +49,20 @@ public class PersonagemService {
 
     public List<PersonagemDTO> getByAlinhamento(Alinhamento alinhamento) {
         List<Personagem> personagens = personagemRepository.getByAlinhamento(alinhamento);
-        List<PersonagemDTO> dtosDosPersonagens = personagens.stream()
-                                                            .map(this::personagemParaDto)
-                                                            .collect(Collectors.toList());
-        return dtosDosPersonagens;
+        return personagens.stream()
+                            .map(this::personagemParaDto)
+                            .collect(Collectors.toList());
+    }
+
+//    getByClasse
+//    getByProfissao
+//    getByRaca
+
+    public List<PersonagemDTO> getByClasse(Classe classe) {
+        List<Personagem> personagens = personagemRepository.getByClasse(classe);
+        return personagens.stream()
+                            .map(this::personagemParaDto)
+                            .collect(Collectors.toList());
     }
 
     // METHODS
