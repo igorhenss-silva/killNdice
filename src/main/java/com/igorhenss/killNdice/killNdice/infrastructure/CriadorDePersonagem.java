@@ -74,4 +74,5 @@ public class CriadorDePersonagem {
     public Raca getRaca() {
         return raca;
     }
+
 }
