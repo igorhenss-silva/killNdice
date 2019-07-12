@@ -24,4 +24,9 @@ public class PersonagemResource {
         return personagemService.getByNomeParcial(nome);
     }
 
+    @GetMapping(value = "/nome/{nome}")
+    public PersonagemDTO getByNome(@PathVariable("nome") String nome) {
+        return personagemService.getByNome(nome);
+    }
+
 }
