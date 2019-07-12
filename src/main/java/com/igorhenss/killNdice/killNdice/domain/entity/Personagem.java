@@ -11,4 +11,13 @@ public class Personagem {
     private Profissao profissao;
     private Raca raca;
 
+    public Personagem(CriadorDePersonagem criador) {
+        this.nome = criador.getNome();
+        this.hitpoints = criador.getHitpoints();
+        this.alinhamento = criador.getAlinhamento();
+        this.classe = criador.getClasse();
+        this.profissao = criador.getProfissao();
+        this.raca = criador.getRaca();
+    }
+
 }
