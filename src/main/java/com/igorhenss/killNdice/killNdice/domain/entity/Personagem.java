@@ -5,6 +5,7 @@ import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 
 public class Personagem {
 
+    private Long id;
     private String nome;
     private Integer hitpoints;
     private Alinhamento alinhamento;
