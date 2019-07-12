@@ -40,6 +40,11 @@ public class PersonagemService {
                 .collect(Collectors.toList());
     }
 
+    public PersonagemDTO getByNome(String nome) {
+        Personagem personagem = personagemRepository.getByNome(nome);
+        return personagemParaDto(personagem);
+    }
+
     // METHODS
 
     private PersonagemDTO personagemParaDto(Personagem personagem) {
