@@ -7,6 +7,9 @@ import com.igorhenss.killNdice.killNdice.repository.PersonagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PersonagemService {
 
@@ -15,7 +18,7 @@ public class PersonagemService {
 
     // CREATE
 
-    public PersonagemDTO save(PersonagemDTO dto) {
+    public PersonagemDTO salvar(PersonagemDTO dto) {
         Personagem personagem = new CriadorDePersonagem().comNomeIgualA(dto.getNome())
                                                         .comHitpointsMaximosIgualA(dto.getHitpointsMaximos())
                                                         .comHitpointsIgualA(dto.getHitpoints())
@@ -24,12 +27,22 @@ public class PersonagemService {
                                                         .comProfissaoIgualA(dto.getProfissao())
                                                         .comRacaIgualA(dto.getRaca())
                                                         .criar();
-        return personagemToDto(personagemRepository.save(personagem));
+        return personagemParaDto(personagemRepository.save(personagem));
+    }
+
+    // READ
+
+    public List<PersonagemDTO> getByNomeParcial(String nome) {
+        return personagemRepository.findAll()
+                .stream()
+                .filter(personagem -> personagem.getNome().contains(nome))
+                .map(this::personagemParaDto)
+                .collect(Collectors.toList());
     }
 
     // METHODS
 
-    private PersonagemDTO personagemToDto(Personagem personagem) {
+    private PersonagemDTO personagemParaDto(Personagem personagem) {
         return new PersonagemDTO(personagem.getId(), personagem.getNome(),
                 personagem.getHitpointsMaximos(), personagem.getHitpoints(),
                 personagem.getAlinhamento(), personagem.getClasse(),
