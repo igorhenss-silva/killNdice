@@ -47,37 +47,70 @@ public class Personagem {
         this.raca = criador.getRaca();
     }
 
-    // GETTERS
+    // GETTERS AND SETTERS
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Integer getHitpointsMaximos() {
         return hitpointsMaximos;
+    }
+
+    public void setHitpointsMaximos(Integer hitpointsMaximos) {
+        this.hitpointsMaximos = hitpointsMaximos;
     }
 
     public Integer getHitpoints() {
         return hitpoints;
     }
 
+    public void setHitpoints(Integer hitpoints) {
+        this.hitpoints = hitpoints;
+    }
+
     public Alinhamento getAlinhamento() {
         return alinhamento;
+    }
+
+    public void setAlinhamento(Alinhamento alinhamento) {
+        this.alinhamento = alinhamento;
     }
 
     public Classe getClasse() {
         return classe;
     }
 
+    public void setClasse(Classe classe) {
+        this.classe = classe;
+    }
+
     public Profissao getProfissao() {
         return profissao;
+    }
+
+    public void setProfissao(Profissao profissao) {
+        this.profissao = profissao;
     }
 
     public Raca getRaca() {
         return raca;
     }
+
+    public void setRaca(Raca raca) {
+        this.raca = raca;
+    }
+
 }
