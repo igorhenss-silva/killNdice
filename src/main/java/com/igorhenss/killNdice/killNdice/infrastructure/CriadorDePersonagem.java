@@ -9,6 +9,7 @@ import com.igorhenss.killNdice.killNdice.enumerated.Raca;
 public class CriadorDePersonagem {
 
     private String nome;
+    private Integer hitpointsMaximos;
     private Integer hitpoints;
     private Alinhamento alinhamento;
     private Classe classe;
@@ -17,6 +18,11 @@ public class CriadorDePersonagem {
 
     public CriadorDePersonagem comNomeIgualA(String nome) {
         this.nome = nome;
+        return this;
+    }
+
+    public CriadorDePersonagem comHitpointsMaximosIgualA(Integer hitpointsMaximos) {
+        this.hitpointsMaximos = hitpointsMaximos;
         return this;
     }
 
