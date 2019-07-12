@@ -19,4 +19,16 @@ public class PersonagemDTO implements Serializable {
     private Profissao profissao;
     private Raca raca;
 
+    public PersonagemDTO(Long id, String nome, Integer hitpoints,
+                         Alinhamento alinhamento, Classe classe,
+                         Profissao profissao, Raca raca) {
+        this.id = id;
+        this.nome = nome;
+        this.hitpoints = hitpoints;
+        this.alinhamento = alinhamento;
+        this.classe = classe;
+        this.profissao = profissao;
+        this.raca = raca;
+    }
+
 }
