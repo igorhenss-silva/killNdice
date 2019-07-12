@@ -77,6 +77,20 @@ public class PersonagemService {
                             .collect(Collectors.toList());
     }
 
+    // UPDATE
+
+    public PersonagemDTO alterar(Long id, PersonagemDTO dto) {
+        Personagem personagem = personagemRepository.getOne(id);
+        personagem.setNome(dto.getNome());
+        personagem.setHitpointsMaximos(dto.getHitpointsMaximos());
+        personagem.setHitpoints(dto.getHitpoints());
+        personagem.setAlinhamento(dto.getAlinhamento());
+        personagem.setClasse(dto.getClasse());
+        personagem.setProfissao(dto.getProfissao());
+        personagem.setRaca(dto.getRaca());
+        return personagemParaDto(personagemRepository.save(personagem));
+    }
+
     // METHODS
 
     private PersonagemDTO personagemParaDto(Personagem personagem) {
