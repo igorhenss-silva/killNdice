@@ -1,6 +1,7 @@
 package com.igorhenss.killNdice.killNdice.domain.entity;
 
 import com.igorhenss.killNdice.killNdice.enumerated.*;
+import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 
 public class Personagem {
 
