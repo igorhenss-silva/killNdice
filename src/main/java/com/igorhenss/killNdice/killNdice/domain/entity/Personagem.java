@@ -18,7 +18,7 @@ public class Personagem {
 
     @Column(name = "hitpointsMaximos", nullable = false)
     private Integer hitpointsMaximos;
-    
+
     @Column(name = "hp", nullable = false)
     private Integer hitpoints;
 
