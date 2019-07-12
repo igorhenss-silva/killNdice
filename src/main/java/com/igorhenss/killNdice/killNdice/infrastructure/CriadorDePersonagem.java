@@ -8,12 +8,12 @@ import com.igorhenss.killNdice.killNdice.enumerated.Raca;
 
 public class CriadorDePersonagem {
 
-    public String nome;
-    public Integer hitpoints;
-    public Alinhamento alinhamento;
-    public Classe classe;
-    public Profissao profissao;
-    public Raca raca;
+    private String nome;
+    private Integer hitpoints;
+    private Alinhamento alinhamento;
+    private Classe classe;
+    private Profissao profissao;
+    private Raca raca;
 
     public CriadorDePersonagem comNomeIgualA(String nome) {
         this.nome = nome;
