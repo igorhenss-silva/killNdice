@@ -94,7 +94,7 @@ public class PersonagemService {
 
     // DELETE
 
-    public HttpStatus delete(Long id) {
+    public HttpStatus apagar(Long id) {
         Long beforeDelete = personagemRepository.count();
         Long afterDelete;
         Personagem personagem = personagemRepository.getOne(id);
