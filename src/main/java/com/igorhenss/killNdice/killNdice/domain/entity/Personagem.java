@@ -16,7 +16,7 @@ public class Personagem {
     @Column(name = "nome", nullable = false, unique = true)
     private String nome;
 
-    @Column(name = "hitpointsMaximos", nullable = false)
+    @Column(name = "hitpoints_maximos", nullable = false)
     private Integer hitpointsMaximos;
 
     @Column(name = "hp", nullable = false)
