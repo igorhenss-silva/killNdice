@@ -4,6 +4,7 @@ import com.igorhenss.killNdice.killNdice.domain.dto.PersonagemDTO;
 import com.igorhenss.killNdice.killNdice.domain.entity.Personagem;
 import com.igorhenss.killNdice.killNdice.enumerated.Alinhamento;
 import com.igorhenss.killNdice.killNdice.enumerated.Classe;
+import com.igorhenss.killNdice.killNdice.enumerated.Profissao;
 import com.igorhenss.killNdice.killNdice.infrastructure.CriadorDePersonagem;
 import com.igorhenss.killNdice.killNdice.repository.PersonagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,12 +55,15 @@ public class PersonagemService {
                             .collect(Collectors.toList());
     }
 
-//    getByClasse
-//    getByProfissao
-//    getByRaca
-
     public List<PersonagemDTO> getByClasse(Classe classe) {
         List<Personagem> personagens = personagemRepository.getByClasse(classe);
+        return personagens.stream()
+                            .map(this::personagemParaDto)
+                            .collect(Collectors.toList());
+    }
+
+    public List<PersonagemDTO> getByProfissao(Profissao profissao) {
+        List<Personagem> personagens = personagemRepository.getByProfissao(profissao);
         return personagens.stream()
                             .map(this::personagemParaDto)
                             .collect(Collectors.toList());
