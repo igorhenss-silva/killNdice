@@ -53,4 +53,9 @@ public class PersonagemResource {
         return personagemService.getByRaca(raca);
     }
 
+    @PutMapping(value = "/{id}")
+    public PersonagemDTO alterar(@PathVariable("id") Long id, @RequestBody PersonagemDTO body) {
+        return personagemService.alterar(id, body);
+    }
+
 }
