@@ -1,4 +1,52 @@
 package com.igorhenss.killNdice.killNdice.infrastructure;
 
+import com.igorhenss.killNdice.killNdice.domain.entity.Personagem;
+import com.igorhenss.killNdice.killNdice.enumerated.Alinhamento;
+import com.igorhenss.killNdice.killNdice.enumerated.Classe;
+import com.igorhenss.killNdice.killNdice.enumerated.Profissao;
+import com.igorhenss.killNdice.killNdice.enumerated.Raca;
+
 public class CriadorDePersonagem {
+
+    public String nome;
+    public Integer hitpoints;
+    public Alinhamento alinhamento;
+    public Classe classe;
+    public Profissao profissao;
+    public Raca raca;
+
+    public CriadorDePersonagem comNomeIgualA(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public CriadorDePersonagem comHitpointsIgualA(Integer hitpoints) {
+        this.hitpoints = hitpoints;
+        return this;
+    }
+
+    public CriadorDePersonagem comAlinhamentoIgualA(Alinhamento alinhamento) {
+        this.alinhamento = alinhamento;
+        return this;
+    }
+
+    public CriadorDePersonagem comClasseIgualA(Classe classe) {
+        this.classe = classe;
+        return this;
+    }
+
+    public CriadorDePersonagem comProfissaoIgualA(Profissao profissao) {
+        this.profissao = profissao;
+        return this;
+    }
+
+    public CriadorDePersonagem comRacaIgualA(Raca raca) {
+        this.raca = raca;
+        return this;
+    }
+
+    public Personagem criar() {
+        return new Personagem(this);
+    }
+
 }
