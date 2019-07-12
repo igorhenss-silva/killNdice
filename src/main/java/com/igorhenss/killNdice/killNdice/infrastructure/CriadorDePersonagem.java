@@ -61,6 +61,10 @@ public class CriadorDePersonagem {
         return nome;
     }
 
+    public Integer getHitpointsMaximos() {
+        return hitpointsMaximos;
+    }
+
     public Integer getHitpoints() {
         return hitpoints;
     }
