@@ -7,6 +7,7 @@ import com.igorhenss.killNdice.killNdice.enumerated.Profissao;
 import com.igorhenss.killNdice.killNdice.enumerated.Raca;
 import com.igorhenss.killNdice.killNdice.service.PersonagemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -56,6 +57,11 @@ public class PersonagemResource {
     @PutMapping(value = "/{id}")
     public PersonagemDTO alterar(@PathVariable("id") Long id, @RequestBody PersonagemDTO body) {
         return personagemService.alterar(id, body);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public HttpStatus delete(@PathVariable("id") Long id) {
+        return personagemService.apagar(id);
     }
 
 }
