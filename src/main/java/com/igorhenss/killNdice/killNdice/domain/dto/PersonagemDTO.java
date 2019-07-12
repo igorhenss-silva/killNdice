@@ -14,17 +14,19 @@ public class PersonagemDTO implements Serializable {
 
     private Long id;
     private String nome;
+    private Integer hitpointsMaximos;
     private Integer hitpoints;
     private Alinhamento alinhamento;
     private Classe classe;
     private Profissao profissao;
     private Raca raca;
 
-    public PersonagemDTO(Long id, String nome, Integer hitpoints,
-                         Alinhamento alinhamento, Classe classe,
-                         Profissao profissao, Raca raca) {
+    public PersonagemDTO(Long id, String nome, Integer hitpointsMaximos,
+                         Integer hitpoints, Alinhamento alinhamento,
+                         Classe classe, Profissao profissao, Raca raca) {
         this.id = id;
         this.nome = nome;
+        this.hitpointsMaximos = hitpointsMaximos;
         this.hitpoints = hitpoints;
         this.alinhamento = alinhamento;
         this.classe = classe;
@@ -69,6 +71,14 @@ public class PersonagemDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Integer getHitpointsMaximos() {
+        return hitpointsMaximos;
+    }
+
+    public void setHitpointsMaximos(Integer hitpointsMaximos) {
+        this.hitpointsMaximos = hitpointsMaximos;
     }
 
     public Integer getHitpoints() {
