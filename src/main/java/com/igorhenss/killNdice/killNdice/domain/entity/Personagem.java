@@ -7,7 +7,6 @@ public class Personagem {
     private String nome;
     private Integer hitpoints;
     private Alinhamento alinhamento;
-    private Atributo atributo;
     private Classe classe;
     private Profissao profissao;
     private Raca raca;
