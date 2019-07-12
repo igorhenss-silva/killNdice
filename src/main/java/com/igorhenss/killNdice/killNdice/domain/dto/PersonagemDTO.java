@@ -6,6 +6,7 @@ import com.igorhenss.killNdice.killNdice.enumerated.Profissao;
 import com.igorhenss.killNdice.killNdice.enumerated.Raca;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class PersonagemDTO implements Serializable {
 
@@ -29,6 +30,27 @@ public class PersonagemDTO implements Serializable {
         this.classe = classe;
         this.profissao = profissao;
         this.raca = raca;
+    }
+
+    // EQUALS AND HASHCODE
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonagemDTO that = (PersonagemDTO) o;
+        return id.equals(that.id) &&
+                nome.equals(that.nome) &&
+                hitpoints.equals(that.hitpoints) &&
+                alinhamento == that.alinhamento &&
+                classe == that.classe &&
+                profissao == that.profissao &&
+                raca == that.raca;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome);
     }
 
 }
