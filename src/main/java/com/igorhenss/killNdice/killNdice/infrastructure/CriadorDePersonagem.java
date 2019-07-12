@@ -49,4 +49,29 @@ public class CriadorDePersonagem {
         return new Personagem(this);
     }
 
+    // GETTERS
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Integer getHitpoints() {
+        return hitpoints;
+    }
+
+    public Alinhamento getAlinhamento() {
+        return alinhamento;
+    }
+
+    public Classe getClasse() {
+        return classe;
+    }
+
+    public Profissao getProfissao() {
+        return profissao;
+    }
+
+    public Raca getRaca() {
+        return raca;
+    }
 }
