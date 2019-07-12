@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface PersonagemRepository extends JpaRepository<Personagem, Long> {
 
-    Personagem getByName(String name);
+    Personagem getByNome(String nome);
     List<Personagem> getByAlinhamento(Alinhamento alinhamento);
     List<Personagem> getByClasse(Classe classe);
     List<Personagem> getByProfissao(Profissao profissao);
